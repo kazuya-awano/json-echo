@@ -1,0 +1,1 @@
+{ "id": "mock-123", "object": "chat.completion", "choices": [{ "index": 0, "message": { "role": "assistant", "content": "これはモック応答です" }, "finish_reason": "stop" }] }
