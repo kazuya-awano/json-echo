@@ -3,14 +3,14 @@ name: Build and Push Docker Image to GHCR
 on:
   push:
     tags:
-      - 'v*.*.*'   # 例: v1.0.0 で発火
+      - 'v*.*.*' # 例: v1.0.0 で発火
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      packages: write   # GHCR への push に必要
+      packages: write # GHCR への push に必要
 
     steps:
       - name: Checkout
@@ -38,7 +38,7 @@ jobs:
       - name: Build & Push (multi-arch)
         uses: docker/build-push-action@v6
         with:
-          context: .                # Dockerfile が repo 直下の場合
+          context: .
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
